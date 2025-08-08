@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delicias Dulces</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #f8b195;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    nav {
+      background-color: #f67280;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .postre {
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      margin: 15px;
+      width: 280px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .postre:hover {
+      transform: scale(1.03);
+    }
+
+    .postre img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .postre h3, .postre p {
+      margin: 10px;
+    }
+
+    .detalles {
+      display: none;
+      background-color: #fff0ec;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .detalles h2 {
+      margin-top: 0;
+    }
+
+    .detalles ul {
+      padding-left: 20px;
+    }
+
+    .close-btn {
+      background-color: #f67280;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #f8b195;
+      text-align: center;
+      padding: 15px;
+      color: white;
+    }
+    
+    .title{
+        font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-size: 30px;
+  font-style: normal;
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+    <h1>Delicias Dulces</h1></div>
+    <p>¡Los postres más sabrosos en un solo lugar!</p>
+  </header>
+
+  <nav>
+    <a href="#pasteles">Pasteles</a>
+    <a href="#galletas">Galletas</a>
+    <a href="#helados">Helados</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="container">
+    <div class="postre" onclick="mostrarDetalles('chocolate')">
+      <img src="img/pastel_triple_chocolate.jpg" alt="Pastel de chocolate">
+      <h3>Pastel de Chocolate</h3>
+      <p>Un clásico irresistible con cobertura de ganache.</p>
+    </div>
+
+    <div class="postre" onclick="mostrarDetalles('galletas')">
+      <img src="img/galletas_chcolate.jpg" alt="Galletas">
+      <h3>Galletas con chispas</h3>
+      <p>Suaves por dentro, crujientes por fuera.</p>
+    </div>
+
+    <div class="postre" onclick="mostrarDetalles('helado')">
+      <img src="img/helado_chocolate.jpg" alt="Helado">
+      <h3>Helado artesanal</h3>
+      <p>De vainilla con frutas naturales.</p>
+    </div>
+  </div>
+
+  <!-- Sección de detalles -->
+  <div class="detalles" id="detallePostre">
+    <h2 id="tituloDetalle"></h2>
+    <ul id="ingredientesDetalle"></ul>
+    <p><strong>Precio:</strong> <span id="precioDetalle"></span></p>
+    <button class="close-btn" onclick="cerrarDetalles()">Cerrar</button>
+  </div>
+
+  <footer id="contacto">
+    <p>© 2025 Delicias Dulces — Síguenos en Instagram @deliciasdulces</p>
+  </footer>
+
+  <script>
+    const postres = {
+      chocolate: {
+        titulo: "Pastel de Chocolate",
+        ingredientes: ["Harina", "Huevos", "Cacao", "Azúcar", "Mantequilla", "Ganache de chocolate"],
+        precio: "$30,000"
+      },
+      galletas: {
+        titulo: "Galletas con Chispas",
+        ingredientes: ["Harina", "Mantequilla", "Azúcar moreno", "Huevos", "Chispas de chocolate"],
+        precio: "$2,000 c/u"
+      },
+      helado: {
+        titulo: "Helado Artesanal",
+        ingredientes: ["Leche", "Crema", "Azúcar", "Vainilla natural", "Frutas frescas"],
+        precio: "$4,500"
+      }
+    };
+
+    function mostrarDetalles(tipo) {
+      const postre = postres[tipo];
+      document.getElementById('tituloDetalle').textContent = postre.titulo;
+      document.getElementById('ingredientesDetalle').innerHTML = postre.ingredientes.map(i => `<li>${i}</li>`).join('');
+      document.getElementById('precioDetalle').textContent = postre.precio;
+      document.getElementById('detallePostre').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('detallePostre').offsetTop - 20, behavior: 'smooth' });
+    }
+
+    function cerrarDetalles() {
+      document.getElementById('detallePostre').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
