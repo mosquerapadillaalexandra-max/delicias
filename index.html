@@ -145,13 +145,19 @@
       <p>De frutos rojos y trocitos.</p>
     </div>
 
-    <div class="postre" onclick="mostrarDetalles('helado')">
+     <div class="postre" onclick="mostrarDetalles('minipie')">
       <img src="img/pie_limon.jpg" alt="Mini Pie">
       <h3>Mini Pie de Limòn</h3>
       <p>Una base dulce mezclada con el exquisito àcido del limòn.</p>
     </div>
+
+    <div class="postre" onclick="mostrarDetalles('usodered')">
+      <img src="img/uso_redes.jpg" alt="Uso de Red">
+      <h3>Uso seguro y ético de la Red</h3>
+    </div>
   </div>
 
+  <!-- Sección de detalles -->
   <div class="detalles" id="detallePostre">
     <h2 id="tituloDetalle"></h2>
     <ul id="ingredientesDetalle"></ul>
@@ -177,10 +183,21 @@
       },
       helado: {
         titulo: "Helado Artesanal",
-        ingredientes: ["Leche", "Crema", "Azúcar", "Vainilla natural", "Frutas frescas"],
+        ingredientes: ["Leche", "Crema", "Azúcar", "Sabor natural", "Frutas frescas"],
         precio: "$4,500"
-      }
-    };
+      },
+      minipie: {
+        titulo: "Mini Pie de Limòn",
+        ingredientes: ["Leche dulce", "Crema", "Azúcar", "Limon", "Frutas frescas"],
+        precio: "$6,500"
+        },
+        usodered: {
+        titulo: "Uso seguro y ético de la red",
+        ingredientes: ["En la primera actividad, se analizó el video Recomendaciones para el Uso Seguro de Internet y las Redes Sociales, el cual expone la importancia de proteger la privacidad, verificar la información antes de compartirla y prevenir riesgos como el ciberacoso o el fraude digital. A partir de este material, se propusieron cinco tips prácticos para el actuar como aprendiz digital: cuidar la privacidad, interactuar solo con personas conocidas, pensar antes de publicar, controlar el tiempo en línea y desarrollar pensamiento crítico. "],
+        ingredientes: ["En la segunda actividad, se revisaron los principios de Ética y valores en la Red y las Reglas de netiqueta, estableciendo cinco lineamientos para una adecuada socialización en entornos digitales: respeto en la comunicación, uso responsable de la información, protección de datos personales, participación activa y constructiva, y cuidado en la redacción. Cada uno se justificó y se explicó cómo aplicarlo en un curso virtual para mantener un ambiente de aprendizaje seguro, colaborativo y respetuoso."],
+        ingredientes: ["En conjunto, ambas actividades resaltan que el uso consciente y responsable de internet y las redes digitales no solo protege al usuario, sino que también favorece un entorno virtual más seguro, confiable y enriquecedor para todos."]
+        }
+        };
 
     function mostrarDetalles(tipo) {
       const postre = postres[tipo];
