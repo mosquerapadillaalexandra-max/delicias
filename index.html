@@ -1,121 +1,36 @@
 <!DOCTYPE html>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Delicias Dulces</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Monda:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff8f2;
-      color: #333;
-    }
-
-    header {
-      background-color: #f8b195;
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-
-    nav {
-      background-color: #f67280;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .postre {
-      background-color: #fff;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      margin: 15px;
-      width: 280px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-
-    .postre:hover {
-      transform: scale(1.03);
-    }
-
-    .postre img {
-      width: 100%;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .postre h3, .postre p {
-      margin: 10px;
-    }
-
-    .detalles {
-      display: none;
-      background-color: #fff0ec;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .detalles h2 {
-      margin-top: 0;
-    }
-
-    .detalles ul {
-      padding-left: 20px;
-    }
-
-    .close-btn {
-      background-color: #f67280;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    footer {
-      background-color: #f8b195;
-      text-align: center;
-      padding: 15px;
-      color: white;
-    }
-    
-    .title{
-        font-family: "Luckiest Guy", cursive;
-  font-weight: 400;
-  font-size: 30px;
-  font-style: normal;
-
-    }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #fff8f2; color: #333; }
+    header { background-color: #f8b195; padding: 20px; text-align: center; color: white; }
+    nav { background-color: #f67280; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .container { display:flex; flex-wrap:wrap; justify-content:center; padding:20px; }
+    .postre { background:#fff; border:1px solid #eee; border-radius:10px; margin:15px; width:280px; box-shadow:0 2px 5px rgba(0,0,0,0.1); transition:transform .3s; cursor:pointer; }
+    .postre:hover { transform:scale(1.03); }
+    .postre img { width:100%; border-radius:10px 10px 0 0; }
+    .postre h3, .postre p { margin:10px; }
+    .detalles { display:none; background-color:#fff0ec; padding:20px; margin:20px auto; border-radius:10px; max-width:800px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    .detalles h2 { margin-top:0; }
+    .detalles ul { padding-left:20px; }
+    .close-btn { background-color:#f67280; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer; margin-top:10px; }
+    footer { background-color:#f8b195; text-align:center; padding:15px; color:white; }
+    .title { font-family: "Luckiest Guy", cursive; font-weight:400; font-size:30px; }
   </style>
 </head>
 <body>
   <header>
-    <div class="title">
-    <h1>Delicias Dulces</h1></div>
+    <div class="title"><h1>Delicias Dulces</h1></div>
     <p>¡Los postres más sabrosos en un solo lugar!</p>
   </header>
 
@@ -145,32 +60,32 @@
       <p>De frutos rojos y trocitos.</p>
     </div>
 
-     <div class="postre" onclick="mostrarDetalles('minipie')">
+    <div class="postre" onclick="mostrarDetalles('minipie')">
       <img src="img/pie_limon.jpg" alt="Mini Pie">
-      <h3>Mini Pie de Limòn</h3>
-      <p>Una base dulce mezclada con el exquisito àcido del limòn.</p>
+      <h3>Mini Pie de Limón</h3>
+      <p>Una base dulce mezclada con el exquisito ácido del limón.</p>
     </div>
 
     <div class="postre" onclick="mostrarDetalles('usodered')">
-      <img src="img/uso_redes.jpg" alt="Uso de Red">
+      <img src="img/uso_redes.jpg" alt="Uso de la Red">
       <h3>Uso seguro y ético de la Red</h3>
     </div>
   </div>
 
-  <!-- Sección de detalles -->
-  <div class="detalles" id="detallePostre">
+  <!-- Panel de detalles -->
+  <div class="detalles" id="detalle">
     <h2 id="tituloDetalle"></h2>
-    <ul id="ingredientesDetalle"></ul>
-    <p><strong>Precio:</strong> <span id="precioDetalle"></span></p>
+    <div id="contenidoDetalle"></div>
+    <p id="precioParrafo"><strong>Precio:</strong> <span id="precioDetalle"></span></p>
     <button class="close-btn" onclick="cerrarDetalles()">Cerrar</button>
   </div>
 
   <footer id="contacto">
-    <p>© 2025 Delicias Dulces — Síguenos en Instagram @deliciasdulces</p>
+    <p>© 2025 Delicias Dulces — Síguenos en Instagram @deliciasdulces - Maira Mosquera</p>
   </footer>
 
   <script>
-    const postres = {
+    const items = {
       chocolate: {
         titulo: "Pastel de Chocolate",
         ingredientes: ["Harina", "Huevos", "Cacao", "Azúcar", "Mantequilla", "Ganache de chocolate"],
@@ -187,29 +102,47 @@
         precio: "$4,500"
       },
       minipie: {
-        titulo: "Mini Pie de Limòn",
-        ingredientes: ["Leche dulce", "Crema", "Azúcar", "Limon", "Frutas frescas"],
+        titulo: "Mini Pie de Limón",
+        ingredientes: ["Leche dulce", "Crema", "Azúcar", "Limón", "Frutas frescas"],
         precio: "$6,500"
-        },
-        usodered: {
+      },
+      usodered: {
         titulo: "Uso seguro y ético de la red",
-        ingredientes: ["En la primera actividad, se analizó el video Recomendaciones para el Uso Seguro de Internet y las Redes Sociales, el cual expone la importancia de proteger la privacidad, verificar la información antes de compartirla y prevenir riesgos como el ciberacoso o el fraude digital. A partir de este material, se propusieron cinco tips prácticos para el actuar como aprendiz digital: cuidar la privacidad, interactuar solo con personas conocidas, pensar antes de publicar, controlar el tiempo en línea y desarrollar pensamiento crítico. "],
-        ingredientes: ["En la segunda actividad, se revisaron los principios de Ética y valores en la Red y las Reglas de netiqueta, estableciendo cinco lineamientos para una adecuada socialización en entornos digitales: respeto en la comunicación, uso responsable de la información, protección de datos personales, participación activa y constructiva, y cuidado en la redacción. Cada uno se justificó y se explicó cómo aplicarlo en un curso virtual para mantener un ambiente de aprendizaje seguro, colaborativo y respetuoso."],
-        ingredientes: ["En conjunto, ambas actividades resaltan que el uso consciente y responsable de internet y las redes digitales no solo protege al usuario, sino que también favorece un entorno virtual más seguro, confiable y enriquecedor para todos."]
-        }
-        };
+        texto: `
+          En la primera actividad, se analizó el video Recomendaciones para el Uso Seguro de Internet y las Redes Sociales, el cual expone la importancia de proteger la privacidad, verificar la información antes de compartirla y prevenir riesgos como el ciberacoso o el fraude digital. A partir de este material, se propusieron cinco tips prácticos para el actuar como aprendiz digital: cuidar la privacidad, interactuar solo con personas conocidas, pensar antes de publicar, controlar el tiempo en línea y desarrollar pensamiento crítico.<br><br>
+          En la segunda actividad, se revisaron los principios de Ética y valores en la Red y las Reglas de netiqueta, estableciendo cinco lineamientos para una adecuada socialización en entornos digitales: respeto en la comunicación, uso responsable de la información, protección de datos personales, participación activa y constructiva, y cuidado en la redacción. Cada uno se justificó y se explicó cómo aplicarlo en un curso virtual para mantener un ambiente de aprendizaje seguro, colaborativo y respetuoso.<br><br>
+          En conjunto, ambas actividades resaltan que el uso consciente y responsable de internet y las redes digitales no solo protege al usuario, sino que también favorece un entorno virtual más seguro, confiable y enriquecedor para todos.
+        `
+      }
+    };
 
     function mostrarDetalles(tipo) {
-      const postre = postres[tipo];
-      document.getElementById('tituloDetalle').textContent = postre.titulo;
-      document.getElementById('ingredientesDetalle').innerHTML = postre.ingredientes.map(i => `<li>${i}</li>`).join('');
-      document.getElementById('precioDetalle').textContent = postre.precio;
-      document.getElementById('detallePostre').style.display = 'block';
-      window.scrollTo({ top: document.getElementById('detallePostre').offsetTop - 20, behavior: 'smooth' });
+      const item = items[tipo];
+      if (!item) return;
+
+      document.getElementById('tituloDetalle').textContent = item.titulo;
+
+      const contenido = document.getElementById('contenidoDetalle');
+      if (item.ingredientes) {
+        contenido.innerHTML = `<ul>${item.ingredientes.map(i => `<li>${i}</li>`).join('')}</ul>`;
+      } else if (item.texto) {
+        contenido.innerHTML = `<p>${item.texto}</p>`;
+      }
+
+      const precioParrafo = document.getElementById('precioParrafo');
+      if (item.precio) {
+        document.getElementById('precioDetalle').textContent = item.precio;
+        precioParrafo.style.display = 'block';
+      } else {
+        precioParrafo.style.display = 'none';
+      }
+
+      document.getElementById('detalle').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('detalle').offsetTop - 20, behavior: 'smooth' });
     }
 
     function cerrarDetalles() {
-      document.getElementById('detallePostre').style.display = 'none';
+      document.getElementById('detalle').style.display = 'none';
     }
   </script>
 </body>
